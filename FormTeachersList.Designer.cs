@@ -35,6 +35,7 @@
             System.Windows.Forms.Label телефонLabel;
             System.Windows.Forms.Label статус_активностиLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTeachersList));
+            System.Windows.Forms.Label фотографияLabel;
             this.schoolDataSet = new SchoolLabs.SchoolDataSet();
             this.преподавательBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.преподавательTableAdapter = new SchoolLabs.SchoolDataSetTableAdapters.ПреподавательTableAdapter();
@@ -58,16 +59,19 @@
             this.телефонTextBox = new System.Windows.Forms.TextBox();
             this.статус_активностиCheckBox = new System.Windows.Forms.CheckBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.фотографияPictureBox = new System.Windows.Forms.PictureBox();
             iD_преподавателяLabel = new System.Windows.Forms.Label();
             фИОLabel = new System.Windows.Forms.Label();
             номер_трудового_договораLabel = new System.Windows.Forms.Label();
             телефонLabel = new System.Windows.Forms.Label();
             статус_активностиLabel = new System.Windows.Forms.Label();
+            фотографияLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.schoolDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.преподавательBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.преподавательBindingNavigator)).BeginInit();
             this.преподавательBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.фотографияPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // iD_преподавателяLabel
@@ -170,7 +174,7 @@
             this.преподавательBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.преподавательBindingNavigator.Name = "преподавательBindingNavigator";
             this.преподавательBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.преподавательBindingNavigator.Size = new System.Drawing.Size(800, 27);
+            this.преподавательBindingNavigator.Size = new System.Drawing.Size(828, 31);
             this.преподавательBindingNavigator.TabIndex = 0;
             this.преподавательBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -180,7 +184,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 28);
             this.bindingNavigatorAddNewItem.Text = "Добавить";
             // 
             // bindingNavigatorCountItem
@@ -274,7 +278,7 @@
             this.iD_преподавателяTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.преподавательBindingSource, "ID_преподавателя", true));
             this.iD_преподавателяTextBox.Location = new System.Drawing.Point(237, 63);
             this.iD_преподавателяTextBox.Name = "iD_преподавателяTextBox";
-            this.iD_преподавателяTextBox.Size = new System.Drawing.Size(433, 22);
+            this.iD_преподавателяTextBox.Size = new System.Drawing.Size(539, 22);
             this.iD_преподавателяTextBox.TabIndex = 2;
             // 
             // фИОTextBox
@@ -282,7 +286,7 @@
             this.фИОTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.преподавательBindingSource, "ФИО", true));
             this.фИОTextBox.Location = new System.Drawing.Point(237, 107);
             this.фИОTextBox.Name = "фИОTextBox";
-            this.фИОTextBox.Size = new System.Drawing.Size(433, 22);
+            this.фИОTextBox.Size = new System.Drawing.Size(539, 22);
             this.фИОTextBox.TabIndex = 4;
             // 
             // номер_трудового_договораTextBox
@@ -290,7 +294,7 @@
             this.номер_трудового_договораTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.преподавательBindingSource, "Номер_трудового_договора", true));
             this.номер_трудового_договораTextBox.Location = new System.Drawing.Point(237, 160);
             this.номер_трудового_договораTextBox.Name = "номер_трудового_договораTextBox";
-            this.номер_трудового_договораTextBox.Size = new System.Drawing.Size(433, 22);
+            this.номер_трудового_договораTextBox.Size = new System.Drawing.Size(539, 22);
             this.номер_трудового_договораTextBox.TabIndex = 6;
             this.номер_трудового_договораTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.номер_трудового_договораTextBox_Validating);
             // 
@@ -299,13 +303,13 @@
             this.телефонTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.преподавательBindingSource, "Телефон", true));
             this.телефонTextBox.Location = new System.Drawing.Point(237, 213);
             this.телефонTextBox.Name = "телефонTextBox";
-            this.телефонTextBox.Size = new System.Drawing.Size(433, 22);
+            this.телефонTextBox.Size = new System.Drawing.Size(539, 22);
             this.телефонTextBox.TabIndex = 8;
             this.телефонTextBox.Validating += new System.ComponentModel.CancelEventHandler(this.телефонTextBox_Validating);
             // 
             // статус_активностиCheckBox
             // 
-            this.статус_активностиCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.преподавательBindingSource, "Статус_активности", true));
+            this.статус_активностиCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.преподавательBindingSource, "Фотография", true));
             this.статус_активностиCheckBox.Location = new System.Drawing.Point(237, 264);
             this.статус_активностиCheckBox.Name = "статус_активностиCheckBox";
             this.статус_активностиCheckBox.Size = new System.Drawing.Size(342, 21);
@@ -316,11 +320,31 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // фотографияLabel
+            // 
+            фотографияLabel.AutoSize = true;
+            фотографияLabel.Location = new System.Drawing.Point(318, 264);
+            фотографияLabel.Name = "фотографияLabel";
+            фотографияLabel.Size = new System.Drawing.Size(92, 16);
+            фотографияLabel.TabIndex = 11;
+            фотографияLabel.Text = "Фотография:";
+            // 
+            // фотографияPictureBox
+            // 
+            this.фотографияPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.преподавательBindingSource, "Фотография", true));
+            this.фотографияPictureBox.Location = new System.Drawing.Point(416, 264);
+            this.фотографияPictureBox.Name = "фотографияPictureBox";
+            this.фотографияPictureBox.Size = new System.Drawing.Size(360, 159);
+            this.фотографияPictureBox.TabIndex = 12;
+            this.фотографияPictureBox.TabStop = false;
+            // 
             // FormTeachersList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(828, 450);
+            this.Controls.Add(фотографияLabel);
+            this.Controls.Add(this.фотографияPictureBox);
             this.Controls.Add(iD_преподавателяLabel);
             this.Controls.Add(this.iD_преподавателяTextBox);
             this.Controls.Add(фИОLabel);
@@ -342,6 +366,7 @@
             this.преподавательBindingNavigator.ResumeLayout(false);
             this.преподавательBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.фотографияPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -372,5 +397,6 @@
         private System.Windows.Forms.TextBox телефонTextBox;
         private System.Windows.Forms.CheckBox статус_активностиCheckBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.PictureBox фотографияPictureBox;
     }
 }

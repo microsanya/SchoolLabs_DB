@@ -111,7 +111,7 @@
             this.файлToolStripMenuItem1,
             this.справочникиToolStripMenuItem1});
             this.contextMenuStripMain.Name = "contextMenuStripMain";
-            this.contextMenuStripMain.Size = new System.Drawing.Size(173, 52);
+            this.contextMenuStripMain.Size = new System.Drawing.Size(211, 80);
             // 
             // файлToolStripMenuItem1
             // 
@@ -119,7 +119,7 @@
             this.выходToolStripMenuItem1,
             this.оПрограммеToolStripMenuItem1});
             this.файлToolStripMenuItem1.Name = "файлToolStripMenuItem1";
-            this.файлToolStripMenuItem1.Size = new System.Drawing.Size(172, 24);
+            this.файлToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
             this.файлToolStripMenuItem1.Text = "Файл";
             // 
             // справочникиToolStripMenuItem1
@@ -133,7 +133,7 @@
             this.групповыеЗанятияToolStripMenuItem1,
             this.индивидуальныеЗанятияToolStripMenuItem1});
             this.справочникиToolStripMenuItem1.Name = "справочникиToolStripMenuItem1";
-            this.справочникиToolStripMenuItem1.Size = new System.Drawing.Size(172, 24);
+            this.справочникиToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
             this.справочникиToolStripMenuItem1.Text = "Справочники";
             // 
             // toolStripMain
@@ -205,6 +205,7 @@
             this.договорыToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
             this.договорыToolStripMenuItem1.Size = new System.Drawing.Size(323, 26);
             this.договорыToolStripMenuItem1.Text = "Договоры";
+            this.договорыToolStripMenuItem1.Click += new System.EventHandler(this.договорыToolStripMenuItem1_Click);
             // 
             // группыToolStripMenuItem1
             // 
@@ -288,6 +289,7 @@
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(29, 24);
             this.toolStripButton3.Text = "Договоры";
+            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
             // toolStripButton4
             // 
@@ -368,6 +370,7 @@
             this.договорыToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
             this.договорыToolStripMenuItem.Size = new System.Drawing.Size(323, 26);
             this.договорыToolStripMenuItem.Text = "Договоры";
+            this.договорыToolStripMenuItem.Click += new System.EventHandler(this.договорыToolStripMenuItem_Click);
             // 
             // группыToolStripMenuItem
             // 
