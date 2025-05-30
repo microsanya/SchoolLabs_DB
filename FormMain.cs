@@ -129,15 +129,45 @@ namespace SchoolLabs
 
         private void группыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormGroupsList.fg.ShowForm();
         }
 
         private void toolStripButton4_Click(object sender, EventArgs e)
         {
-
+            FormGroupsList.fg.ShowForm();
         }
 
         private void группыToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormGroupsList.fg.ShowForm();
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
+        {
+            FormGroupLessonsList.fgg.ShowForm();
+        }
+
+        private void групповыеЗанятияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGroupLessonsList.fgg.ShowForm();
+        }
+
+        private void групповыеЗанятияToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormGroupLessonsList.fgg.ShowForm();
+        }
+
+        private void индивидуальныеЗанятияToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void индивидуальныеЗанятияToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
         }

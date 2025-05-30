@@ -58,6 +58,18 @@
     <Compile Include="FormContractsList.Designer.cs">
       <DependentUpon>FormContractsList.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormGroupLessonsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGroupLessonsList.Designer.cs">
+      <DependentUpon>FormGroupLessonsList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormGroupsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormGroupsList.Designer.cs">
+      <DependentUpon>FormGroupsList.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -88,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormContractsList.resx">
       <DependentUpon>FormContractsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGroupLessonsList.resx">
+      <DependentUpon>FormGroupLessonsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormGroupsList.resx">
+      <DependentUpon>FormGroupsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
