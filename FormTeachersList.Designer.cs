@@ -34,8 +34,8 @@
             System.Windows.Forms.Label номер_трудового_договораLabel;
             System.Windows.Forms.Label телефонLabel;
             System.Windows.Forms.Label статус_активностиLabel;
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTeachersList));
             System.Windows.Forms.Label фотографияLabel;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormTeachersList));
             this.schoolDataSet = new SchoolLabs.SchoolDataSet();
             this.преподавательBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.преподавательTableAdapter = new SchoolLabs.SchoolDataSetTableAdapters.ПреподавательTableAdapter();
@@ -60,6 +60,8 @@
             this.статус_активностиCheckBox = new System.Windows.Forms.CheckBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.фотографияPictureBox = new System.Windows.Forms.PictureBox();
+            this.buttonOpenPhoto = new System.Windows.Forms.Button();
+            this.openFileDialogPhoto = new System.Windows.Forms.OpenFileDialog();
             iD_преподавателяLabel = new System.Windows.Forms.Label();
             фИОLabel = new System.Windows.Forms.Label();
             номер_трудового_договораLabel = new System.Windows.Forms.Label();
@@ -119,6 +121,15 @@
             статус_активностиLabel.TabIndex = 9;
             статус_активностиLabel.Text = "Статус активности:";
             // 
+            // фотографияLabel
+            // 
+            фотографияLabel.AutoSize = true;
+            фотографияLabel.Location = new System.Drawing.Point(372, 264);
+            фотографияLabel.Name = "фотографияLabel";
+            фотографияLabel.Size = new System.Drawing.Size(92, 16);
+            фотографияLabel.TabIndex = 11;
+            фотографияLabel.Text = "Фотография:";
+            // 
             // schoolDataSet
             // 
             this.schoolDataSet.DataSetName = "SchoolDataSet";
@@ -174,7 +185,7 @@
             this.преподавательBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.преподавательBindingNavigator.Name = "преподавательBindingNavigator";
             this.преподавательBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.преподавательBindingNavigator.Size = new System.Drawing.Size(828, 31);
+            this.преподавательBindingNavigator.Size = new System.Drawing.Size(828, 27);
             this.преподавательBindingNavigator.TabIndex = 0;
             this.преподавательBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -184,7 +195,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorAddNewItem.Text = "Добавить";
             // 
             // bindingNavigatorCountItem
@@ -320,29 +331,36 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
-            // фотографияLabel
-            // 
-            фотографияLabel.AutoSize = true;
-            фотографияLabel.Location = new System.Drawing.Point(318, 264);
-            фотографияLabel.Name = "фотографияLabel";
-            фотографияLabel.Size = new System.Drawing.Size(92, 16);
-            фотографияLabel.TabIndex = 11;
-            фотографияLabel.Text = "Фотография:";
-            // 
             // фотографияPictureBox
             // 
             this.фотографияPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.преподавательBindingSource, "Фотография", true));
-            this.фотографияPictureBox.Location = new System.Drawing.Point(416, 264);
+            this.фотографияPictureBox.Location = new System.Drawing.Point(529, 264);
             this.фотографияPictureBox.Name = "фотографияPictureBox";
-            this.фотографияPictureBox.Size = new System.Drawing.Size(360, 159);
+            this.фотографияPictureBox.Size = new System.Drawing.Size(146, 159);
+            this.фотографияPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.фотографияPictureBox.TabIndex = 12;
             this.фотографияPictureBox.TabStop = false;
+            // 
+            // buttonOpenPhoto
+            // 
+            this.buttonOpenPhoto.Location = new System.Drawing.Point(322, 304);
+            this.buttonOpenPhoto.Name = "buttonOpenPhoto";
+            this.buttonOpenPhoto.Size = new System.Drawing.Size(190, 27);
+            this.buttonOpenPhoto.TabIndex = 13;
+            this.buttonOpenPhoto.Text = "Открыть фото";
+            this.buttonOpenPhoto.UseVisualStyleBackColor = true;
+            this.buttonOpenPhoto.Click += new System.EventHandler(this.buttonOpenPhoto_Click);
+            // 
+            // openFileDialogPhoto
+            // 
+            this.openFileDialogPhoto.FileName = "openFileDialog1";
             // 
             // FormTeachersList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(828, 450);
+            this.Controls.Add(this.buttonOpenPhoto);
             this.Controls.Add(фотографияLabel);
             this.Controls.Add(this.фотографияPictureBox);
             this.Controls.Add(iD_преподавателяLabel);
@@ -398,5 +416,7 @@
         private System.Windows.Forms.CheckBox статус_активностиCheckBox;
         private System.Windows.Forms.ErrorProvider errorProvider1;
         private System.Windows.Forms.PictureBox фотографияPictureBox;
+        private System.Windows.Forms.Button buttonOpenPhoto;
+        private System.Windows.Forms.OpenFileDialog openFileDialogPhoto;
     }
 }

@@ -94,5 +94,28 @@ namespace SchoolLabs
 
             errorProvider1.SetError(телефонTextBox, "");
         }
+
+
+        string fileImage = "";
+        private void buttonOpenPhoto_Click(object sender, EventArgs e)
+        {
+            openFileDialogPhoto.Title = "Укажите файл для фото";
+            if (openFileDialogPhoto.ShowDialog() == DialogResult.OK)
+            {
+                fileImage = openFileDialogPhoto.FileName;
+                try
+                {
+                    фотографияPictureBox.Image = new
+                    Bitmap(openFileDialogPhoto.FileName);
+                }
+                catch
+                {
+                    MessageBox.Show("Выбран не тот формат файла", "Ошибка",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+            else fileImage = "";
+        }
     }
 }

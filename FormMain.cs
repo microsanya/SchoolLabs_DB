@@ -114,15 +114,30 @@ namespace SchoolLabs
 
         private void договорыToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormContractsList.fс.ShowForm();
         }
 
         private void toolStripButton3_Click(object sender, EventArgs e)
         {
-
+            FormContractsList.fс.ShowForm();
         }
 
         private void договорыToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormContractsList.fс.ShowForm();
+        }
+
+        private void группыToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void группыToolStripMenuItem1_Click(object sender, EventArgs e)
         {
 
         }
