@@ -70,6 +70,12 @@
     <Compile Include="FormGroupsList.Designer.cs">
       <DependentUpon>FormGroupsList.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormIndividualLessonsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormIndividualLessonsList.Designer.cs">
+      <DependentUpon>FormIndividualLessonsList.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -106,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormGroupsList.resx">
       <DependentUpon>FormGroupsList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormIndividualLessonsList.resx">
+      <DependentUpon>FormIndividualLessonsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>

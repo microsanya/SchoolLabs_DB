@@ -159,17 +159,17 @@ namespace SchoolLabs
 
         private void индивидуальныеЗанятияToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FormIndividualLessonsList.fgi.ShowForm();
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e)
         {
-
+            FormIndividualLessonsList.fgi.ShowForm();
         }
 
         private void индивидуальныеЗанятияToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-
+            FormIndividualLessonsList.fgi.ShowForm();
         }
     }
 }
