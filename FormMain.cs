@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SchoolLabs.Lists;
 using SchoolLabs.Properties;
 
 namespace SchoolLabs
@@ -170,6 +171,21 @@ namespace SchoolLabs
         private void индивидуальныеЗанятияToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             FormIndividualLessonsList.fgi.ShowForm();
+        }
+
+        private void расписаниеГруппToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormGroupTimetableList.fgt.ShowForm();
+        }
+
+        private void toolStripButton7_Click(object sender, EventArgs e)
+        {
+            FormGroupTimetableList.fgt.ShowForm();
+        }
+
+        private void расписаниеГруппToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormGroupTimetableList.fgt.ShowForm();
         }
     }
 }

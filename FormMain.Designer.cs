@@ -37,6 +37,8 @@
             this.файлToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.справочникиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripMain = new System.Windows.Forms.ToolStrip();
+            this.документыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.расписаниеГруппToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.выходToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.оПрограммеToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.преподавателиToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,6 +66,9 @@
             this.группыToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.групповыеЗанятияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.индивидуальныеЗанятияToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.документыToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.расписаниеГруппToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStripMain.SuspendLayout();
             this.contextMenuStripMain.SuspendLayout();
             this.toolStripMain.SuspendLayout();
@@ -74,7 +79,8 @@
             this.menuStripMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.menuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem,
-            this.справочникиToolStripMenuItem});
+            this.справочникиToolStripMenuItem,
+            this.документыToolStripMenuItem});
             this.menuStripMain.Location = new System.Drawing.Point(0, 0);
             this.menuStripMain.Name = "menuStripMain";
             this.menuStripMain.Size = new System.Drawing.Size(800, 28);
@@ -109,9 +115,10 @@
             this.contextMenuStripMain.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStripMain.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.файлToolStripMenuItem1,
-            this.справочникиToolStripMenuItem1});
+            this.справочникиToolStripMenuItem1,
+            this.документыToolStripMenuItem1});
             this.contextMenuStripMain.Name = "contextMenuStripMain";
-            this.contextMenuStripMain.Size = new System.Drawing.Size(211, 80);
+            this.contextMenuStripMain.Size = new System.Drawing.Size(211, 104);
             // 
             // файлToolStripMenuItem1
             // 
@@ -148,12 +155,30 @@
             this.toolStripButton3,
             this.toolStripButton4,
             this.toolStripButton5,
-            this.toolStripButton6});
+            this.toolStripButton6,
+            this.toolStripButton7});
             this.toolStripMain.Location = new System.Drawing.Point(0, 28);
             this.toolStripMain.Name = "toolStripMain";
             this.toolStripMain.Size = new System.Drawing.Size(800, 27);
             this.toolStripMain.TabIndex = 2;
             this.toolStripMain.Text = "toolStripMain";
+            // 
+            // документыToolStripMenuItem
+            // 
+            this.документыToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.расписаниеГруппToolStripMenuItem});
+            this.документыToolStripMenuItem.Name = "документыToolStripMenuItem";
+            this.документыToolStripMenuItem.Size = new System.Drawing.Size(101, 24);
+            this.документыToolStripMenuItem.Text = "Документы";
+            // 
+            // расписаниеГруппToolStripMenuItem
+            // 
+            this.расписаниеГруппToolStripMenuItem.Image = global::SchoolLabs.Properties.Resources.groupTimetable;
+            this.расписаниеГруппToolStripMenuItem.Name = "расписаниеГруппToolStripMenuItem";
+            this.расписаниеГруппToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D1)));
+            this.расписаниеГруппToolStripMenuItem.Size = new System.Drawing.Size(269, 26);
+            this.расписаниеГруппToolStripMenuItem.Text = "Расписание групп";
+            this.расписаниеГруппToolStripMenuItem.Click += new System.EventHandler(this.расписаниеГруппToolStripMenuItem_Click);
             // 
             // выходToolStripMenuItem1
             // 
@@ -347,7 +372,7 @@
             this.преподавателиToolStripMenuItem.Image = global::SchoolLabs.Properties.Resources.teacher;
             this.преподавателиToolStripMenuItem.Name = "преподавателиToolStripMenuItem";
             this.преподавателиToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.P)));
-            this.преподавателиToolStripMenuItem.Size = new System.Drawing.Size(323, 26);
+            this.преподавателиToolStripMenuItem.Size = new System.Drawing.Size(319, 26);
             this.преподавателиToolStripMenuItem.Text = "Преподаватели";
             this.преподавателиToolStripMenuItem.Click += new System.EventHandler(this.преподавателиToolStripMenuItem_Click);
             // 
@@ -356,7 +381,7 @@
             this.администраторыToolStripMenuItem.Image = global::SchoolLabs.Properties.Resources.subject;
             this.администраторыToolStripMenuItem.Name = "администраторыToolStripMenuItem";
             this.администраторыToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.A)));
-            this.администраторыToolStripMenuItem.Size = new System.Drawing.Size(323, 26);
+            this.администраторыToolStripMenuItem.Size = new System.Drawing.Size(319, 26);
             this.администраторыToolStripMenuItem.Text = "Администраторы";
             this.администраторыToolStripMenuItem.Click += new System.EventHandler(this.администраторыToolStripMenuItem_Click);
             // 
@@ -365,7 +390,7 @@
             this.ученикиToolStripMenuItem.Image = global::SchoolLabs.Properties.Resources.students;
             this.ученикиToolStripMenuItem.Name = "ученикиToolStripMenuItem";
             this.ученикиToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.S)));
-            this.ученикиToolStripMenuItem.Size = new System.Drawing.Size(323, 26);
+            this.ученикиToolStripMenuItem.Size = new System.Drawing.Size(319, 26);
             this.ученикиToolStripMenuItem.Text = "Ученики";
             this.ученикиToolStripMenuItem.Click += new System.EventHandler(this.ученикиToolStripMenuItem_Click);
             // 
@@ -374,7 +399,7 @@
             this.договорыToolStripMenuItem.Image = global::SchoolLabs.Properties.Resources.contracts;
             this.договорыToolStripMenuItem.Name = "договорыToolStripMenuItem";
             this.договорыToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.C)));
-            this.договорыToolStripMenuItem.Size = new System.Drawing.Size(323, 26);
+            this.договорыToolStripMenuItem.Size = new System.Drawing.Size(319, 26);
             this.договорыToolStripMenuItem.Text = "Договоры";
             this.договорыToolStripMenuItem.Click += new System.EventHandler(this.договорыToolStripMenuItem_Click);
             // 
@@ -383,7 +408,7 @@
             this.группыToolStripMenuItem.Image = global::SchoolLabs.Properties.Resources.group;
             this.группыToolStripMenuItem.Name = "группыToolStripMenuItem";
             this.группыToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.G)));
-            this.группыToolStripMenuItem.Size = new System.Drawing.Size(323, 26);
+            this.группыToolStripMenuItem.Size = new System.Drawing.Size(319, 26);
             this.группыToolStripMenuItem.Text = "Группы";
             this.группыToolStripMenuItem.Click += new System.EventHandler(this.группыToolStripMenuItem_Click);
             // 
@@ -391,8 +416,8 @@
             // 
             this.групповыеЗанятияToolStripMenuItem.Image = global::SchoolLabs.Properties.Resources.Glessons;
             this.групповыеЗанятияToolStripMenuItem.Name = "групповыеЗанятияToolStripMenuItem";
-            this.групповыеЗанятияToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D1)));
-            this.групповыеЗанятияToolStripMenuItem.Size = new System.Drawing.Size(323, 26);
+            this.групповыеЗанятияToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.K)));
+            this.групповыеЗанятияToolStripMenuItem.Size = new System.Drawing.Size(319, 26);
             this.групповыеЗанятияToolStripMenuItem.Text = "Групповые занятия";
             this.групповыеЗанятияToolStripMenuItem.Click += new System.EventHandler(this.групповыеЗанятияToolStripMenuItem_Click);
             // 
@@ -400,10 +425,37 @@
             // 
             this.индивидуальныеЗанятияToolStripMenuItem.Image = global::SchoolLabs.Properties.Resources.Ilessons;
             this.индивидуальныеЗанятияToolStripMenuItem.Name = "индивидуальныеЗанятияToolStripMenuItem";
-            this.индивидуальныеЗанятияToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D2)));
-            this.индивидуальныеЗанятияToolStripMenuItem.Size = new System.Drawing.Size(323, 26);
+            this.индивидуальныеЗанятияToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.I)));
+            this.индивидуальныеЗанятияToolStripMenuItem.Size = new System.Drawing.Size(319, 26);
             this.индивидуальныеЗанятияToolStripMenuItem.Text = "Индивидуальные занятия";
             this.индивидуальныеЗанятияToolStripMenuItem.Click += new System.EventHandler(this.индивидуальныеЗанятияToolStripMenuItem_Click);
+            // 
+            // toolStripButton7
+            // 
+            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton7.Image = global::SchoolLabs.Properties.Resources.groupTimetable;
+            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton7.Name = "toolStripButton7";
+            this.toolStripButton7.Size = new System.Drawing.Size(29, 24);
+            this.toolStripButton7.Text = "Расписание групп";
+            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
+            // 
+            // документыToolStripMenuItem1
+            // 
+            this.документыToolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.расписаниеГруппToolStripMenuItem1});
+            this.документыToolStripMenuItem1.Name = "документыToolStripMenuItem1";
+            this.документыToolStripMenuItem1.Size = new System.Drawing.Size(210, 24);
+            this.документыToolStripMenuItem1.Text = "Документы";
+            // 
+            // расписаниеГруппToolStripMenuItem1
+            // 
+            this.расписаниеГруппToolStripMenuItem1.Image = global::SchoolLabs.Properties.Resources.groupTimetable;
+            this.расписаниеГруппToolStripMenuItem1.Name = "расписаниеГруппToolStripMenuItem1";
+            this.расписаниеГруппToolStripMenuItem1.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Alt | System.Windows.Forms.Keys.D1)));
+            this.расписаниеГруппToolStripMenuItem1.Size = new System.Drawing.Size(269, 26);
+            this.расписаниеГруппToolStripMenuItem1.Text = "Расписание групп";
+            this.расписаниеГруппToolStripMenuItem1.Click += new System.EventHandler(this.расписаниеГруппToolStripMenuItem1_Click);
             // 
             // FormMain
             // 
@@ -468,6 +520,11 @@
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripButton toolStripButton5;
         private System.Windows.Forms.ToolStripButton toolStripButton6;
+        private System.Windows.Forms.ToolStripMenuItem документыToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem расписаниеГруппToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem документыToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem расписаниеГруппToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripButton toolStripButton7;
     }
 }
 

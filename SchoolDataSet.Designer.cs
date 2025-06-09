@@ -100,8 +100,8 @@ namespace SchoolLabs {
                 if ((ds.Tables["Группа"] != null)) {
                     base.Tables.Add(new ГруппаDataTable(ds.Tables["Группа"]));
                 }
-                if ((ds.Tables["Групповое занятие"] != null)) {
-                    base.Tables.Add(new Групповое_занятиеDataTable(ds.Tables["Групповое занятие"]));
+                if ((ds.Tables["Групповое_занятие"] != null)) {
+                    base.Tables.Add(new Групповое_занятиеDataTable(ds.Tables["Групповое_занятие"]));
                 }
                 if ((ds.Tables["Договор"] != null)) {
                     base.Tables.Add(new ДоговорDataTable(ds.Tables["Договор"]));
@@ -302,8 +302,8 @@ namespace SchoolLabs {
                 if ((ds.Tables["Группа"] != null)) {
                     base.Tables.Add(new ГруппаDataTable(ds.Tables["Группа"]));
                 }
-                if ((ds.Tables["Групповое занятие"] != null)) {
-                    base.Tables.Add(new Групповое_занятиеDataTable(ds.Tables["Групповое занятие"]));
+                if ((ds.Tables["Групповое_занятие"] != null)) {
+                    base.Tables.Add(new Групповое_занятиеDataTable(ds.Tables["Групповое_занятие"]));
                 }
                 if ((ds.Tables["Договор"] != null)) {
                     base.Tables.Add(new ДоговорDataTable(ds.Tables["Договор"]));
@@ -368,7 +368,7 @@ namespace SchoolLabs {
                     this.tableГруппа.InitVars();
                 }
             }
-            this.tableГрупповое_занятие = ((Групповое_занятиеDataTable)(base.Tables["Групповое занятие"]));
+            this.tableГрупповое_занятие = ((Групповое_занятиеDataTable)(base.Tables["Групповое_занятие"]));
             if ((initTable == true)) {
                 if ((this.tableГрупповое_занятие != null)) {
                     this.tableГрупповое_занятие.InitVars();
@@ -1227,10 +1227,12 @@ namespace SchoolLabs {
             
             private global::System.Data.DataColumn columnСтатус_занятия;
             
+            private global::System.Data.DataColumn columnПреподаватель;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public Групповое_занятиеDataTable() {
-                this.TableName = "Групповое занятие";
+                this.TableName = "Групповое_занятие";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -1310,6 +1312,14 @@ namespace SchoolLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn ПреподавательColumn {
+                get {
+                    return this.columnПреподаватель;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             [global::System.ComponentModel.Browsable(false)]
             public int Count {
                 get {
@@ -1345,7 +1355,7 @@ namespace SchoolLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public Групповое_занятиеRow AddГрупповое_занятиеRow(ГруппаRow parentГруппаRowByFK_Групповое_занятие_Группа, ПреподавательRow parentПреподавательRowByFK_Групповое_занятие_Преподаватель, АдминистраторRow parentАдминистраторRowByFK_Групповое_занятие_Администратор, System.DateTime Дата_и_время, string Статус_занятия) {
+            public Групповое_занятиеRow AddГрупповое_занятиеRow(ГруппаRow parentГруппаRowByFK_Групповое_занятие_Группа, ПреподавательRow parentПреподавательRowByFK_Групповое_занятие_Преподаватель, АдминистраторRow parentАдминистраторRowByFK_Групповое_занятие_Администратор, System.DateTime Дата_и_время, string Статус_занятия, string Преподаватель) {
                 Групповое_занятиеRow rowГрупповое_занятиеRow = ((Групповое_занятиеRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
@@ -1353,7 +1363,8 @@ namespace SchoolLabs {
                         null,
                         null,
                         Дата_и_время,
-                        Статус_занятия};
+                        Статус_занятия,
+                        Преподаватель};
                 if ((parentГруппаRowByFK_Групповое_занятие_Группа != null)) {
                     columnValuesArray[1] = parentГруппаRowByFK_Групповое_занятие_Группа[0];
                 }
@@ -1398,6 +1409,7 @@ namespace SchoolLabs {
                 this.columnID_администратора = base.Columns["ID_администратора"];
                 this.columnДата_и_время = base.Columns["Дата_и_время"];
                 this.columnСтатус_занятия = base.Columns["Статус_занятия"];
+                this.columnПреподаватель = base.Columns["Преподаватель"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1415,6 +1427,8 @@ namespace SchoolLabs {
                 base.Columns.Add(this.columnДата_и_время);
                 this.columnСтатус_занятия = new global::System.Data.DataColumn("Статус_занятия", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnСтатус_занятия);
+                this.columnПреподаватель = new global::System.Data.DataColumn("Преподаватель", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnПреподаватель);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
                                 this.columnID_занятия}, true));
                 this.columnID_занятия.AutoIncrement = true;
@@ -3715,6 +3729,22 @@ namespace SchoolLabs {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public string Преподаватель {
+                get {
+                    try {
+                        return ((string)(this[this.tableГрупповое_занятие.ПреподавательColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("Значение для столбца \'Преподаватель\' в таблице \'Групповое_занятие\' равно DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableГрупповое_занятие.ПреподавательColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public АдминистраторRow АдминистраторRow {
                 get {
                     return ((АдминистраторRow)(this.GetParentRow(this.Table.ParentRelations["FK_Групповое занятие_Администратор"])));
@@ -3744,6 +3774,18 @@ namespace SchoolLabs {
                 set {
                     this.SetParentRow(value, this.Table.ParentRelations["FK_Групповое занятие_Преподаватель"]);
                 }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public bool IsПреподавательNull() {
+                return this.IsNull(this.tableГрупповое_занятие.ПреподавательColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public void SetПреподавательNull() {
+                this[this.tableГрупповое_занятие.ПреподавательColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -5447,7 +5489,7 @@ SELECT ID_администратора, ФИО, Телефон FROM Админи
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "Групповое занятие";
+            tableMapping.DataSetTable = "Групповое_занятие";
             tableMapping.ColumnMappings.Add("ID_занятия", "ID_занятия");
             tableMapping.ColumnMappings.Add("ID_группы", "ID_группы");
             tableMapping.ColumnMappings.Add("ID_преподавателя", "ID_преподавателя");
@@ -5547,7 +5589,7 @@ SELECT ID_занятия, ID_группы, ID_преподавателя, ID_а�
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         public virtual int Update(SchoolDataSet dataSet) {
-            return this.Adapter.Update(dataSet, "Групповое занятие");
+            return this.Adapter.Update(dataSet, "Групповое_занятие");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

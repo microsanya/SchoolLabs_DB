@@ -54,6 +54,10 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewCheckBoxColumn1 = new System.Windows.Forms.DataGridViewCheckBoxColumn();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
+            this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripTextBoxFind = new System.Windows.Forms.ToolStripTextBox();
+            this.toolStripButtonFind = new System.Windows.Forms.ToolStripButton();
+            this.checkBoxFind = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.schoolDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ученикBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ученикBindingNavigator)).BeginInit();
@@ -108,7 +112,10 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.ученикBindingNavigatorSaveItem});
+            this.ученикBindingNavigatorSaveItem,
+            this.toolStripSeparator1,
+            this.toolStripTextBoxFind,
+            this.toolStripButtonFind});
             this.ученикBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.ученикBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.ученикBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -116,7 +123,7 @@
             this.ученикBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.ученикBindingNavigator.Name = "ученикBindingNavigator";
             this.ученикBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.ученикBindingNavigator.Size = new System.Drawing.Size(800, 31);
+            this.ученикBindingNavigator.Size = new System.Drawing.Size(800, 27);
             this.ученикBindingNavigator.TabIndex = 0;
             this.ученикBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -126,7 +133,7 @@
             this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 28);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(29, 24);
             this.bindingNavigatorAddNewItem.Text = "Добавить";
             // 
             // bindingNavigatorCountItem
@@ -227,11 +234,11 @@
             this.dataGridViewCheckBoxColumn1});
             this.ученикDataGridView.DataSource = this.ученикBindingSource;
             this.ученикDataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.ученикDataGridView.Location = new System.Drawing.Point(0, 31);
+            this.ученикDataGridView.Location = new System.Drawing.Point(0, 27);
             this.ученикDataGridView.Name = "ученикDataGridView";
             this.ученикDataGridView.RowHeadersWidth = 51;
             this.ученикDataGridView.RowTemplate.Height = 24;
-            this.ученикDataGridView.Size = new System.Drawing.Size(800, 419);
+            this.ученикDataGridView.Size = new System.Drawing.Size(800, 423);
             this.ученикDataGridView.TabIndex = 1;
             this.ученикDataGridView.CellValidating += new System.Windows.Forms.DataGridViewCellValidatingEventHandler(this.ученикDataGridView_CellValidating);
             // 
@@ -276,11 +283,45 @@
             this.dataGridViewCheckBoxColumn1.Name = "dataGridViewCheckBoxColumn1";
             this.dataGridViewCheckBoxColumn1.Width = 125;
             // 
+            // toolStripSeparator1
+            // 
+            this.toolStripSeparator1.Name = "toolStripSeparator1";
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
+            // 
+            // toolStripTextBoxFind
+            // 
+            this.toolStripTextBoxFind.Font = new System.Drawing.Font("Segoe UI", 9F);
+            this.toolStripTextBoxFind.Name = "toolStripTextBoxFind";
+            this.toolStripTextBoxFind.Size = new System.Drawing.Size(100, 27);
+            // 
+            // toolStripButtonFind
+            // 
+            this.toolStripButtonFind.Image = global::SchoolLabs.Properties.Resources.search;
+            this.toolStripButtonFind.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.toolStripButtonFind.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButtonFind.Name = "toolStripButtonFind";
+            this.toolStripButtonFind.Size = new System.Drawing.Size(76, 24);
+            this.toolStripButtonFind.Text = "Поиск";
+            this.toolStripButtonFind.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.toolStripButtonFind.Click += new System.EventHandler(this.toolStripButtonFind_Click);
+            // 
+            // checkBoxFind
+            // 
+            this.checkBoxFind.AutoSize = true;
+            this.checkBoxFind.Location = new System.Drawing.Point(572, 7);
+            this.checkBoxFind.Name = "checkBoxFind";
+            this.checkBoxFind.Size = new System.Drawing.Size(78, 20);
+            this.checkBoxFind.TabIndex = 2;
+            this.checkBoxFind.Text = "Фильтр";
+            this.checkBoxFind.UseVisualStyleBackColor = true;
+            this.checkBoxFind.CheckedChanged += new System.EventHandler(this.checkBoxFind_CheckedChanged);
+            // 
             // FormStudentsList
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.checkBoxFind);
             this.Controls.Add(this.ученикDataGridView);
             this.Controls.Add(this.ученикBindingNavigator);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -324,5 +365,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewCheckBoxColumn dataGridViewCheckBoxColumn1;
         private System.Windows.Forms.ToolTip toolTip1;
+        private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.ToolStripTextBox toolStripTextBoxFind;
+        private System.Windows.Forms.ToolStripButton toolStripButtonFind;
+        private System.Windows.Forms.CheckBox checkBoxFind;
     }
 }

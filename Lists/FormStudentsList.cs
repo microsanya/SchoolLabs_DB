@@ -94,5 +94,66 @@ namespace SchoolLabs
                 }
             }
         }
+        string GetSelectedFieldName()
+        {
+            return ученикDataGridView.Columns[ученикDataGridView.CurrentCell.ColumnIndex].DataPropertyName;
+        }
+
+        private void toolStripButtonFind_Click(object sender, EventArgs e)
+        {
+            if (toolStripTextBoxFind.Text == "")
+            {
+                MessageBox.Show("Вы ничего не задали", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            int indexPos;
+
+            try
+            {
+                indexPos = ученикBindingSource.Find(GetSelectedFieldName(), toolStripTextBoxFind.Text);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Ошибка поиска \n" + err.Message);
+                return;
+            }
+
+            if (indexPos > -1)
+                ученикBindingSource.Position = indexPos;
+            else
+            {
+                MessageBox.Show("Таких администраторов нет", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                ученикBindingSource.Position = 0;
+            }
+        }
+
+        private void checkBoxFind_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxFind.Checked)
+            {
+                if (toolStripTextBoxFind.Text == "")
+                    MessageBox.Show("Вы ничего не задали", "Внимание",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    try
+                    {
+                        ученикBindingSource.Filter =
+                       GetSelectedFieldName() + "='" + toolStripTextBoxFind.Text + "'";
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show("Ошибка фильтрации \n" +
+                       err.Message);
+                    }
+            }
+            else
+                ученикBindingSource.Filter = "";
+            if (ученикBindingSource.Count == 0)
+            {
+                MessageBox.Show("Нет таких");
+                ученикBindingSource.Filter = "";
+                checkBoxFind.Checked = false;
+            }
+        }
     }
 }

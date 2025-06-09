@@ -98,5 +98,67 @@ namespace SchoolLabs
         {
 
         }
+
+        string GetSelectedFieldName()
+        {
+            return администраторDataGridView.Columns[администраторDataGridView.CurrentCell.ColumnIndex].DataPropertyName;
+        }
+
+        private void checkBoxFind_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkBoxFind.Checked)
+            {
+                if (toolStripTextBoxFind.Text == "")
+                    MessageBox.Show("Вы ничего не задали", "Внимание",
+                   MessageBoxButtons.OK, MessageBoxIcon.Information);
+                else
+                    try
+                    {
+                        администраторBindingSource.Filter =
+                       GetSelectedFieldName() + "='" + toolStripTextBoxFind.Text + "'";
+                    }
+                    catch (Exception err)
+                    {
+                        MessageBox.Show("Ошибка фильтрации \n" +
+                       err.Message);
+                    }
+            }
+            else
+                администраторBindingSource.Filter = "";
+            if (администраторBindingSource.Count == 0)
+            {
+                MessageBox.Show("Нет таких");
+                администраторBindingSource.Filter = "";
+                checkBoxFind.Checked = false;
+            }
+        }
+
+        private void toolStripButtonFind_Click(object sender, EventArgs e)
+        {
+            if (toolStripTextBoxFind.Text == "")
+            {
+                MessageBox.Show("Вы ничего не задали", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+
+            int indexPos;
+
+            try
+            {
+                indexPos = администраторBindingSource.Find(GetSelectedFieldName(), toolStripTextBoxFind.Text);
+            }
+            catch (Exception err)
+            {
+                MessageBox.Show("Ошибка поиска \n" + err.Message);
+                return;
+            }
+
+            if (indexPos > -1)
+                администраторBindingSource.Position = indexPos;
+            else
+            {
+                MessageBox.Show("Таких администраторов нет", "Внимание", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                администраторBindingSource.Position = 0;
+            }
+        }
     }
 }

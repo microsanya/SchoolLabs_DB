@@ -117,5 +117,27 @@ namespace SchoolLabs
             }
             else fileImage = "";
         }
+
+        private void toolStripButtonOK_Click(object sender, EventArgs e)
+        {
+            DialogResult = DialogResult.OK;
+        }
+
+        int idCurrent = -1;
+        public int ShowSelectForm(int id)
+        {
+            toolStripButtonOK.Visible = true;
+            idCurrent = id;
+            if (ShowDialog() == DialogResult.OK)
+                return
+               (int)((DataRowView)преподавательBindingSource.Current)["ID_преподавателя"];
+            else
+                return -1;
+        }
+
+        private void FormTeachersList_Shown(object sender, EventArgs e)
+        {
+            преподавательBindingSource.Position = преподавательBindingSource.Find("ID_преподавателя", idCurrent);
+        }
     }
 }

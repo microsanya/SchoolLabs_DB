@@ -46,34 +46,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="FormAdminsList.cs">
+    <Compile Include="Lists\FormAdminsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormAdminsList.Designer.cs">
+    <Compile Include="Lists\FormAdminsList.Designer.cs">
       <DependentUpon>FormAdminsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormContractsList.cs">
+    <Compile Include="Lists\FormContractsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormContractsList.Designer.cs">
+    <Compile Include="Lists\FormContractsList.Designer.cs">
       <DependentUpon>FormContractsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormGroupLessonsList.cs">
+    <Compile Include="Lists\FormGroupLessonsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormGroupLessonsList.Designer.cs">
+    <Compile Include="Lists\FormGroupLessonsList.Designer.cs">
       <DependentUpon>FormGroupLessonsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormGroupsList.cs">
+    <Compile Include="Lists\FormGroupsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormGroupsList.Designer.cs">
+    <Compile Include="Lists\FormGroupsList.Designer.cs">
       <DependentUpon>FormGroupsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormIndividualLessonsList.cs">
+    <Compile Include="Connections\FormGroupTimetableList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormIndividualLessonsList.Designer.cs">
+    <Compile Include="Connections\FormGroupTimetableList.Designer.cs">
+      <DependentUpon>FormGroupTimetableList.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Lists\FormIndividualLessonsList.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Lists\FormIndividualLessonsList.Designer.cs">
       <DependentUpon>FormIndividualLessonsList.cs</DependentUpon>
     </Compile>
     <Compile Include="FormMain.cs">
@@ -82,16 +88,16 @@
     <Compile Include="FormMain.Designer.cs">
       <DependentUpon>FormMain.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormStudentsList.cs">
+    <Compile Include="Lists\FormStudentsList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormStudentsList.Designer.cs">
+    <Compile Include="Lists\FormStudentsList.Designer.cs">
       <DependentUpon>FormStudentsList.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormTeachersList.cs">
+    <Compile Include="Lists\FormTeachersList.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormTeachersList.Designer.cs">
+    <Compile Include="Lists\FormTeachersList.Designer.cs">
       <DependentUpon>FormTeachersList.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -101,28 +107,31 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SchoolDataSet.xsd</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="FormAdminsList.resx">
+    <EmbeddedResource Include="Connections\FormGroupTimetableList.resx">
+      <DependentUpon>FormGroupTimetableList.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Lists\FormAdminsList.resx">
       <DependentUpon>FormAdminsList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormContractsList.resx">
+    <EmbeddedResource Include="Lists\FormContractsList.resx">
       <DependentUpon>FormContractsList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormGroupLessonsList.resx">
+    <EmbeddedResource Include="Lists\FormGroupLessonsList.resx">
       <DependentUpon>FormGroupLessonsList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormGroupsList.resx">
+    <EmbeddedResource Include="Lists\FormGroupsList.resx">
       <DependentUpon>FormGroupsList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormIndividualLessonsList.resx">
+    <EmbeddedResource Include="Lists\FormIndividualLessonsList.resx">
       <DependentUpon>FormIndividualLessonsList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormMain.resx">
       <DependentUpon>FormMain.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormStudentsList.resx">
+    <EmbeddedResource Include="Lists\FormStudentsList.resx">
       <DependentUpon>FormStudentsList.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormTeachersList.resx">
+    <EmbeddedResource Include="Lists\FormTeachersList.resx">
       <DependentUpon>FormTeachersList.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -159,5 +168,6 @@
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
