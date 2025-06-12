@@ -203,5 +203,20 @@ namespace SchoolLabs
         {
             FormIndividualTimetable.fgi.ShowForm();
         }
+
+        private void toolStripButton9_Click(object sender, EventArgs e)
+        {
+            FormSQL.fsql.ShowForm();
+        }
+
+        private void формаЗапросовToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormSQL.fsql.ShowForm();
+        }
+
+        private void формаЗапросовToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            FormSQL.fsql.ShowForm();
+        }
     }
 }
