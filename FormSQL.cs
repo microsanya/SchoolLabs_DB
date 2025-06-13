@@ -135,7 +135,24 @@ namespace SchoolLabs
                     WHERE
                         d.Краткое_описание LIKE @short_description";
             if (checkBoxMore.Checked)
-                sqlSelect += " AND d.Стоимость_услуг > @amount";
+                sqlSelect = "SELECT " +
+                        "d.ID_договора," +
+                        "d.ID_ученика," +
+                        "d.ID_администратора," +
+                        "d.Краткое_описание," +
+                        "d.Стоимость_услуг," +
+                        "d.Количество_оплачиваемых_занятий" +
+                    " FROM " +
+                        "Договор d" +
+                    " GROUP BY " +
+                        "d.ID_договора," +
+                        "d.ID_ученика," +
+                        "d.ID_администратора," +
+                        "d.Краткое_описание," +
+                        "d.Стоимость_услуг," +
+                        "d.Количество_оплачиваемых_занятий" +
+                        " HAVING d.Стоимость_услуг > @amount";
+          
             if (checkBoxOrder.Checked)
                 sqlSelect += " ORDER BY Стоимость_услуг desc";
             SqlConnection connection = new SqlConnection(Properties.Settings.Default.SchoolConnectionString);
@@ -198,18 +215,20 @@ namespace SchoolLabs
             {
                 sqlSelect = @"
             SELECT 
+                u.ID_ученика,
+                u.ФИО_ученика,
                 d.ID_договора, 
-                d.ID_ученика, 
                 d.Краткое_описание, 
                 d.Стоимость_услуг
             FROM 
-                Договор d
+                Ученик u
+            JOIN 
+                Договор d ON u.ID_ученика = d.ID_ученика
             WHERE 
-                d.ID_ученика = @studentId
-                AND d.Стоимость_услуг > (
+                d.Стоимость_услуг > (
                     SELECT AVG(d2.Стоимость_услуг)
                     FROM Договор d2
-                    WHERE d2.ID_ученика = d.ID_ученика)";
+                    WHERE d2.ID_ученика = u.ID_ученика)";
             }
             else if (radioButtonNoCorrelated.Checked)
             {
